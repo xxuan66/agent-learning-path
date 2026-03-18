@@ -101,3 +101,37 @@
 **最后更新：** 2026-03-11  
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
+
+## 🗺️ Agent 学习路线图
+
+### 阶段一：基础入门（1-2 周）
+
+- [ ] 理解 LLM 基本原理
+- [ ] 学习 Prompt Engineering 基础
+- [ ] 熟悉 OpenClaw/类似 Agent 框架
+
+### 阶段二：工具使用（2-3 周）
+
+- [ ] 掌握 Tool Use / Function Calling
+- [ ] 实践 RAG（检索增强生成）
+- [ ] 学习向量数据库基础
+
+### 阶段三：Agent 开发（3-4 周）
+
+- [ ] 理解 ReAct 模式
+- [ ] 实现简单 Agent
+- [ ] 学习多 Agent 协作
+
+### 阶段四：高级应用（持续）
+
+- [ ] 构建复杂工作流
+- [ ] 优化 Agent 性能
+- [ ] 参与开源贡献
+
+---
+
+## 🆕 2026-03-18 更新
+
+- ✅ 新增学习路线图
+- ✅ 添加阶段性学习目标
+- ✅ 优化 README 结构
