@@ -282,7 +282,14 @@ class AgentMemorySystem:
         self.working = WorkingMemory()
     
     def remember(self, content: str, importance: float = 0.5):
-        """存储记忆"""
+        """存储记忆
+
+        importance 参考值：
+        - 0.9+ : 用户明确要求记住的信息（名字、偏好）
+        - 0.7-0.9 : 重要决策、关键事实
+        - 0.4-0.7 : 一般对话内容（仅存短期）
+        - <0.4 : 寒暄、过渡语句（可丢弃）
+        """
         # 短期记忆
         self.short_term.add(content)
         
@@ -355,4 +362,4 @@ class AgentMemorySystem:
 
 ---
 
-*最后更新：2026-03-11*
+*最后更新：2026-03-25*

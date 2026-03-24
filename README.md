@@ -2,9 +2,10 @@
 
 > 从零开始，一步步掌握 AI Agent 的核心知识
 
-![Status](https://img.shields.io/badge/Status-🚀_建设中-blue)
+![Status](https://img.shields.io/badge/Status-✅_已完成-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
 ![Level](https://img.shields.io/badge/Level-入门到精通-orange)
+![Updated](https://img.shields.io/badge/updated-2026--03--25-blue)
 
 ---
 
@@ -98,7 +99,7 @@
 
 ---
 
-**最后更新：** 2026-03-11  
+**最后更新：** 2026-03-25  
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
 
@@ -129,6 +130,14 @@
 - [ ] 参与开源贡献
 
 ---
+
+## 🆕 2026-03-25 更新
+
+- ✅ Status badge 更新为「已完成」
+- ✅ Chapter 13 代码添加 `eval()` 安全警告
+- ✅ Chapter 11 补充 importance 阈值选取建议
+- ✅ 性能优化补充 Token 精简的折中方案
+- ✅ 开源项目补充近年新项目
 
 ## 🆕 2026-03-18 更新
 
