@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-✅_已完成-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
 ![Level](https://img.shields.io/badge/Level-入门到精通-orange)
-![Updated](https://img.shields.io/badge/updated-2026--03--25-blue)
+![Updated](https://img.shields.io/badge/updated-2026--03--26-blue)
 
 ---
 
@@ -99,8 +99,17 @@
 
 ---
 
-**最后更新：** 2026-03-25  
+**最后更新：** 2026-03-26  
 **维护者：** xuan  
+**GitHub：** https://github.com/xxuan66/agent-learning-path
+
+## 🆕 2026-03-26 更新
+
+- ✅ 修复 8 处导航链接（中文目录名 → 实际英文目录名）
+- ✅ 框架对比新增「30 秒选择法」决策流程
+- ✅ 更新 badge 日期至 2026-03-26
+
+## 🆕 2026-03-25 更新  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
 
 ## 🗺️ Agent 学习路线图
