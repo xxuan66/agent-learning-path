@@ -17,4 +17,4 @@
 
 ---
 
-**上一章**: [04-主流框架](../04-主流框架/README.md) | **下一章**: [06-学习资源](../06-学习资源/README.md)
+**上一章**: [03-高级篇](../03-advanced/chapter12-safety-alignment.md) | **下一章**: [05-学习资源](../05-resources/README.md)
