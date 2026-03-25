@@ -2,6 +2,21 @@
 
 主流 AI Agent 框架的全面对比。
 
+## 🤔 30 秒选择法
+
+不知道选哪个？按顺序回答：
+
+1. **你的项目需要多 Agent 协作吗？**
+   - 是 → 跳到 #2
+   - 否（单 Agent 就够） → **选 LangChain**
+
+2. **团队需要快速上手吗？**
+   - 是 → **选 CrewAI**（角色概念直觉化）
+   - 否（愿意投入学习时间） → **选 AutoGen**（协作能力最强）
+
+3. **还在纠结？**
+   - 先用 CrewAI 做原型验证，成功后再评估是否迁移到 LangChain/AutoGen
+
 ## 📊 功能对比表
 
 | 特性 | LangChain | AutoGen | CrewAI |
@@ -112,4 +127,4 @@ researcher = Agent(
 
 ---
 
-**上一章**: [CrewAI 入门](CrewAI 入门.md) | **下一章**: [05-实战案例](../05-实战案例/README.md)
+**上一章**: [CrewAI 入门](chapter14-3-crewai.md) | **下一章**: [Agent 应用案例](chapter15-use-cases.md)
