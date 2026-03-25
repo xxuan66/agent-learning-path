@@ -24,4 +24,4 @@
 
 ---
 
-**上一章**: [01-基础概念](../01-基础概念/README.md) | **下一章**: [03-核心组件](../03-核心组件/README.md)
+**上一章**: [Chapter 4: Agent 的核心能力](../01-beginner/chapter04-core-capabilities.md) | **下一章**: [Chapter 5: Agent 架构演进](chapter05-architecture-evolution.md)
