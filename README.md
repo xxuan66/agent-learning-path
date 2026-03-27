@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-✅_已完成-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
 ![Level](https://img.shields.io/badge/Level-入门到精通-orange)
-![Updated](https://img.shields.io/badge/updated-2026--03--26-blue)
+![Updated](https://img.shields.io/badge/updated-2026--03--28-blue)
 
 ---
 
@@ -99,18 +99,27 @@
 
 ---
 
-**最后更新：** 2026-03-26  
+**最后更新：** 2026-03-28  
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
+
+## 🆕 2026-03-28 更新
+
+- ✅ 修复 05-实战案例 中的断链问题（标注规划中章节）
+- ✅ 修复 客服助手.md 导航链接
+- ✅ 更新 badge 日期至 2026-03-28
+
+## 🆕 2026-03-27 更新
+
+- ✅ Chapter 16（未来发展）补充内容：典型场景、2026 热点方向、学习建议
+- ✅ 开源项目补充近年新星（LangGraph、OpenClaw）
+- ✅ 更新 badge 日期至 2026-03-27
 
 ## 🆕 2026-03-26 更新
 
 - ✅ 修复 8 处导航链接（中文目录名 → 实际英文目录名）
 - ✅ 框架对比新增「30 秒选择法」决策流程
 - ✅ 更新 badge 日期至 2026-03-26
-
-## 🆕 2026-03-25 更新  
-**GitHub：** https://github.com/xxuan66/agent-learning-path
 
 ## 🗺️ Agent 学习路线图
 
@@ -139,14 +148,6 @@
 - [ ] 参与开源贡献
 
 ---
-
-## 🆕 2026-03-25 更新
-
-- ✅ Status badge 更新为「已完成」
-- ✅ Chapter 13 代码添加 `eval()` 安全警告
-- ✅ Chapter 11 补充 importance 阈值选取建议
-- ✅ 性能优化补充 Token 精简的折中方案
-- ✅ 开源项目补充近年新项目
 
 ## 🆕 2026-03-18 更新
 
