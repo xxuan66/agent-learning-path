@@ -97,11 +97,12 @@ researcher = Agent(
 
 ## 📈 发展趋势
 
-| 框架 | 2024 状态 | 发展方向 |
+| 框架 | 2026 状态 | 发展方向 |
 |------|----------|----------|
-| LangChain | 成熟稳定 | LangGraph、Deep Agents |
-| AutoGen | 快速发展 | 更好的 UI、更多集成 |
-| CrewAI | 快速上升 | 企业功能、云平台 |
+| LangChain | 成熟稳定 | LangGraph（有状态工作流）、Deep Agents、LangSmith 可观测性 |
+| AutoGen | v0.4 大重构 | AgentChat UI、跨语言支持、企业级部署 |
+| CrewAI | 快速成长 | CrewAI Enterprise、知识库集成、Flow 编排 |
+| OpenClaw | 社区活跃 | Skill 生态、多渠道集成、本地化 Agent |
 
 ## 🎓 学习建议
 

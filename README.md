@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-✅_已完成-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
 ![Level](https://img.shields.io/badge/Level-入门到精通-orange)
-![Updated](https://img.shields.io/badge/updated-2026--03--28-blue)
+![Updated](https://img.shields.io/badge/updated-2026--03--29-blue)
 
 ---
 
@@ -99,9 +99,16 @@
 
 ---
 
-**最后更新：** 2026-03-28  
+**最后更新：** 2026-03-29  
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
+
+## 🆕 2026-03-29 更新
+
+- ✅ 框架对比更新发展趋势至 2026（LangGraph、AutoGen v0.4、CrewAI Enterprise、OpenClaw）
+- ✅ Chapter 16 补充 MCP 协议生态趋势
+- ✅ 安全指南新增间接提示注入防护示例
+- ✅ 性能优化新增「减少幻觉」实战技巧
 
 ## 🆕 2026-03-28 更新
 
