@@ -103,6 +103,13 @@
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
 
+## 🆕 2026-03-30 更新
+
+- ✅ 客服助手案例：新增超时重试配置和优雅降级策略
+- ✅ 性能优化：检查清单补充超时重试和优雅降级
+- ✅ 开源项目：更新星标数据，新增 vLLM、Open WebUI 等实用工具
+- ✅ 框架对比：更新 LangChain Stars 数据
+
 ## 🆕 2026-03-29 更新
 
 - ✅ 框架对比更新发展趋势至 2026（LangGraph、AutoGen v0.4、CrewAI Enterprise、OpenClaw）
