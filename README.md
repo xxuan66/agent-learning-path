@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-✅_已完成-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
 ![Level](https://img.shields.io/badge/Level-入门到精通-orange)
-![Updated](https://img.shields.io/badge/updated-2026--03--29-blue)
+![Updated](https://img.shields.io/badge/updated-2026--03--30-blue)
 
 ---
 
@@ -119,37 +119,13 @@
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
 
-## 🆕 2026-03-30 更新
+## 🆕 近期更新
 
-- ✅ 客服助手案例：新增超时重试配置和优雅降级策略
-- ✅ 性能优化：检查清单补充超时重试和优雅降级
-- ✅ 开源项目：更新星标数据，新增 vLLM、Open WebUI 等实用工具
-- ✅ 框架对比：更新 LangChain Stars 数据
-
-## 🆕 2026-03-29 更新
-
-- ✅ 框架对比更新发展趋势至 2026（LangGraph、AutoGen v0.4、CrewAI Enterprise、OpenClaw）
-- ✅ Chapter 16 补充 MCP 协议生态趋势
-- ✅ 安全指南新增间接提示注入防护示例
-- ✅ 性能优化新增「减少幻觉」实战技巧
-
-## 🆕 2026-03-28 更新
-
-- ✅ 修复 05-实战案例 中的断链问题（标注规划中章节）
-- ✅ 修复 客服助手.md 导航链接
-- ✅ 更新 badge 日期至 2026-03-28
-
-## 🆕 2026-03-27 更新
-
-- ✅ Chapter 16（未来发展）补充内容：典型场景、2026 热点方向、学习建议
-- ✅ 开源项目补充近年新星（LangGraph、OpenClaw）
-- ✅ 更新 badge 日期至 2026-03-27
-
-## 🆕 2026-03-26 更新
-
-- ✅ 修复 8 处导航链接（中文目录名 → 实际英文目录名）
-- ✅ 框架对比新增「30 秒选择法」决策流程
-- ✅ 更新 badge 日期至 2026-03-26
+- ✅ 将仓库主入口统一到顶层中文目录
+- ✅ 系统重写基础概念、技术演进、核心组件、框架与案例导读
+- ✅ 补强资源导航、最佳实践、安全与性能相关说明
+- ✅ 更新客服助手案例的降级和稳定性设计
+- ✅ 清理仓库整理说明与 `.gitignore`
 
 ## 🗺️ Agent 学习路线图
 
