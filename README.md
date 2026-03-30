@@ -1,6 +1,6 @@
-# 🤖 Agent 学习路径 (Agent Learning Path)
+# Agent 学习路径 (Agent Learning Path)
 
-> 从零开始，一步步掌握 AI Agent 的核心知识
+系统化的中文 Agent 学习仓库，面向希望从概念、技术演进、核心组件，一路走到框架、案例和最佳实践的读者。
 
 ![Status](https://img.shields.io/badge/Status-✅_已完成-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
@@ -9,44 +9,59 @@
 
 ---
 
+## 这份仓库适合谁
+
+- 想系统理解 Agent，而不是只看零散热点概念的读者
+- 想分清 ReAct、Planning、Tool Use、Memory、Multi-Agent 等概念边界的读者
+- 想从“会用模型”走向“会判断 Agent 系统怎么设计”的开发者
+
+## 建议从哪套目录开始读
+
+当前仓库以顶层中文目录为主入口：
+
+- `01-基础概念/`
+- `02-技术演进/`
+- `03-核心组件/`
+- `04-主流框架/`
+- `05-实战案例/`
+- `06-学习资源/`
+- `07-最佳实践/`
+
+`docs/` 目录保留了更早期的分层稿，当前更适合做历史参考，不建议作为主要阅读入口。
+
 ## 📚 目录
 
-### 第一部分：入门篇 (Beginner) ✅ 已完成
-- [Chapter 1: Agent 是什么？](docs/01-beginner/chapter01-what-is-agent.md)
-- [Chapter 2: Agent 的基本组成](docs/01-beginner/chapter02-agent-components.md)
-- [Chapter 3: 从 Chatbot 到 Agent](docs/01-beginner/chapter03-chatbot-to-agent.md)
-- [Chapter 4: Agent 的核心能力](docs/01-beginner/chapter04-core-capabilities.md)
+### 第一部分：基础概念
+- [什么是 AI Agent](01-基础概念/什么是%20AI%20Agent.md)
+- [Agent 核心能力](01-基础概念/Agent%20核心能力.md)
+- [Agent 应用场景](01-基础概念/Agent%20应用场景.md)
 
-### 第二部分：进阶篇 (Intermediate) ✅ 已完成
-- [Chapter 5: Agent 架构演进](docs/02-intermediate/chapter05-architecture-evolution.md)
-- [Chapter 6: ReAct 模式详解](docs/02-intermediate/chapter06-react-pattern.md)
-- [Chapter 7: Chain-of-Thought 思维链](docs/02-intermediate/chapter07-chain-of-thought.md)
-- [Chapter 8: Planning & Reasoning](docs/02-intermediate/chapter08-planning-reasoning.md)
+### 第二部分：技术演进
+- [Agent 发展简史](02-技术演进/Agent%20发展简史.md)
+- [里程碑项目](02-技术演进/里程碑项目.md)
 
-### 第三部分：高级篇 (Advanced) ✅ 已完成
-- [Chapter 9: Multi-Agent 系统](docs/03-advanced/chapter09-multi-agent.md)
-- [Chapter 10: Agent 工具使用](docs/03-advanced/chapter10-tool-use.md)
-- [Chapter 11: Agent 记忆系统](docs/03-advanced/chapter11-memory-systems.md)
-- [Chapter 12: Agent 安全与对齐](docs/03-advanced/chapter12-safety-alignment.md)
+### 第三部分：核心组件
+- [规划与任务分解](03-核心组件/规划与任务分解.md)
+- [记忆系统](03-核心组件/记忆系统.md)
 
-### 第四部分：实战篇 (Practical) ✅ 已完成
-- [Chapter 13: 构建你的第一个 Agent](docs/04-practical/README.md)
-- [Chapter 14: 常见 Agent 框架对比](docs/04-practical/chapter14-frameworks-comparison.md)
-  - [LangChain 入门](docs/04-practical/chapter14-1-langchain.md)
-  - [AutoGen 入门](docs/04-practical/chapter14-2-autogen.md)
-  - [CrewAI 入门](docs/04-practical/chapter14-3-crewai.md)
-- [Chapter 15: Agent 应用案例](docs/04-practical/chapter15-use-cases.md)
-- [Chapter 16: Agent 未来发展](docs/04-practical/chapter16-future-trends.md)
+### 第四部分：主流框架
+- [框架对比](04-主流框架/框架对比.md)
+- [LangChain 入门](04-主流框架/LangChain%20入门.md)
+- [AutoGen 入门](04-主流框架/AutoGen%20入门.md)
+- [CrewAI 入门](04-主流框架/CrewAI%20入门.md)
 
-### 第五部分：学习资源 (Resources) ✅ 已完成
-- [在线课程](docs/05-resources/在线课程.md)
-- [技术博客](docs/05-resources/技术博客.md)
-- [开源项目](docs/05-resources/开源项目.md)
+### 第五部分：实战案例
+- [客服助手](05-实战案例/客服助手.md)
 
-### 第六部分：最佳实践 (Best Practices) ✅ 已完成
-- [开发规范](docs/06-best-practices/开发规范.md)
-- [安全指南](docs/06-best-practices/安全指南.md)
-- [性能优化](docs/06-best-practices/性能优化.md)
+### 第六部分：学习资源
+- [在线课程](06-学习资源/在线课程.md)
+- [技术博客](06-学习资源/技术博客.md)
+- [开源项目](06-学习资源/开源项目.md)
+
+### 第七部分：最佳实践
+- [开发规范](07-最佳实践/开发规范.md)
+- [安全指南](07-最佳实践/安全指南.md)
+- [性能优化](07-最佳实践/性能优化.md)
 
 ---
 
@@ -55,14 +70,14 @@
 1. **理解 Agent 的本质** - 从基本概念到高级架构
 2. **掌握核心技术** - ReAct、CoT、Planning、Tool Use 等
 3. **动手实践** - 构建自己的 Agent 应用
-4. **了解前沿动态** - 最新发展趋势和研究方向
+4. **了解前沿动态** - 理解 Agent 的主要发展方向和系统变化
 
 ---
 
 ## 📖 推荐阅读顺序
 
-```
-入门篇 (1-4 周) → 进阶篇 (4-8 周) → 高级篇 (8-12 周) → 实战篇 (持续)
+```text
+基础概念 → 技术演进 → 核心组件 → 主流框架 → 实战案例 → 最佳实践
 ```
 
 ---
@@ -76,18 +91,19 @@
 
 ---
 
-## 📊 仓库状态
+## 📊 当前状态
 
-| 章节 | 状态 | 完成度 |
-|------|------|--------|
-| 入门篇 | ✅ 已完成 | 100% |
-| 进阶篇 | ✅ 已完成 | 100% |
-| 高级篇 | ✅ 已完成 | 100% |
-| 实战篇 | ✅ 已完成 | 100% |
-| 学习资源 | ✅ 已完成 | 100% |
-| 最佳实践 | ✅ 已完成 | 100% |
+| 模块 | 状态 | 说明 |
+|------|------|------|
+| 基础概念 | ✅ 已整理 | 作为当前主入口的一部分 |
+| 技术演进 | ✅ 已整理 | 用于建立历史脉络 |
+| 核心组件 | ✅ 已整理 | 聚焦 Agent 关键模块 |
+| 主流框架 | ✅ 已整理 | 聚焦框架与选型 |
+| 实战案例 | ✅ 已整理 | 当前案例仍可继续补充 |
+| 学习资源 | ✅ 已整理 | 作为补充资料使用 |
+| 最佳实践 | ✅ 已整理 | 偏工程与安全视角 |
 
-**总计：** 30+ Markdown 文件，覆盖 Agent 学习全路径
+**说明：** 当前仓库已经覆盖 Agent 学习主线，但部分章节仍可继续精修与补充。
 
 ---
 
@@ -99,7 +115,7 @@
 
 ---
 
-**最后更新：** 2026-03-29  
+**最后更新：** 2026-03-30  
 **维护者：** xuan  
 **GitHub：** https://github.com/xxuan66/agent-learning-path
 
