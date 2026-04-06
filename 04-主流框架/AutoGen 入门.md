@@ -140,4 +140,20 @@ register_function(
 
 ---
 
+## ⚠️ 版本说明
+
+本文档基于 AutoGen 0.2.x 版本。AutoGen 0.4+ 进行了重大架构重构：
+
+**主要变化**：
+- 引入 `AssistantAgent` 和 `UserProxyAgent` 的新 API
+- `ConversableAgent` 重构
+- 新增异步支持和更好的类型提示
+- 改进的 GroupChat 和 GroupChatManager
+
+**建议**：
+- 新项目建议使用 AutoGen 0.4+ 版本
+- 现有项目可以继续使用 0.2.x，但建议逐步迁移
+
+---
+
 **上一章**: [LangChain 入门](LangChain 入门.md) | **下一章**: [CrewAI 入门](CrewAI 入门.md)
