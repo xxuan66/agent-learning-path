@@ -4,9 +4,10 @@
 
 ## 本章内容
 
-- [LangChain 入门](LangChain 入门.md) - 最流行的 Agent 框架
-- [AutoGen 入门](AutoGen 入门.md) - 微软多 Agent 协作框架
-- [CrewAI 入门](CrewAI 入门.md) - 角色驱动的 Agent 团队
+- [LangChain 入门](LangChain%20入门.md) - 最流行的 Agent 框架
+- [LangGraph 入门](LangGraph%20入门.md) 🆕 - LangChain 的状态图框架
+- [AutoGen 入门](AutoGen%20入门.md) - 微软多 Agent 协作框架
+- [CrewAI 入门](CrewAI%20入门.md) - 角色驱动的 Agent 团队
 - [框架对比](框架对比.md) - 如何选择适合的框架
 
 ## 框架生态概览
