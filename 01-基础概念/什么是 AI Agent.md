@@ -32,22 +32,33 @@ LLM 是 Agent 的核心控制器，负责：
 
 ```python
 # 简单的 Agent 示例
-from langchain.agents import create_agent
+from langchain_openai import ChatOpenAI
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.tools import tool
 
+@tool
 def get_weather(city: str) -> str:
     """获取天气信息"""
     return f"{city} 今天晴朗，温度 25°C"
 
-# 创建一个简单的 Agent
-agent = create_agent(
-    model="gpt-4",
-    tools=[get_weather],
-    system_prompt="你是一个有帮助的助手"
-)
+# 创建 LLM
+llm = ChatOpenAI(model="gpt-4", temperature=0)
+
+# 创建提示词模板
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "你是一个有帮助的助手"),
+    ("human", "{input}"),
+])
+
+# 创建 Agent
+tools = [get_weather]
+agent = create_openai_functions_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 # 使用 Agent
-response = agent.invoke({"messages": [{"role": "user", "content": "北京天气怎么样？"}]})
-print(response)
+response = agent_executor.invoke({"input": "北京天气怎么样？"})
+print(response["output"])
 ```
 
 ### 2. 规划模块

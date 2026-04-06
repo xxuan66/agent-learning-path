@@ -75,8 +75,12 @@ result = chain.invoke({
 ### 4. Agent（智能体）
 
 ```python
-from langchain.agents import create_agent, Tool
-from langchain.tools import tool
+from langchain_openai import ChatOpenAI
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.tools import tool
+
+llm = ChatOpenAI(model="gpt-4", temperature=0)
 
 @tool
 def search(query: str) -> str:
@@ -89,23 +93,30 @@ def calculate(expression: str) -> str:
     """计算数学表达式"""
     return str(eval(expression))
 
+# 创建提示词模板
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "你是一个有帮助的助手"),
+    ("human", "{input}"),
+])
+
 # 创建 Agent
-agent = create_agent(
-    llm=llm,
-    tools=[search, calculate],
-    system_message="你是一个有帮助的助手"
-)
+tools = [search, calculate]
+agent = create_openai_functions_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 # 使用 Agent
-response = agent.invoke({
-    "messages": [{"role": "user", "content": "搜索 AI 发展趋势，然后计算 123 * 456"}]
+response = agent_executor.invoke({
+    "input": "搜索 AI 发展趋势，然后计算 123 * 456"
 })
 ```
 
 ### 5. Memory（记忆）
 
 ```python
-from langchain.memory import ConversationBufferMemory
+from langchain_community.memory import ConversationBufferMemory
+from langchain_openai import ChatOpenAI
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 # 创建记忆
 memory = ConversationBufferMemory(
@@ -113,11 +124,21 @@ memory = ConversationBufferMemory(
     return_messages=True
 )
 
-# 在 Agent 中使用
-agent = create_agent(
-    llm=llm,
+# 创建带记忆的 Agent
+llm = ChatOpenAI(model="gpt-4", temperature=0)
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "你是一个有帮助的助手"),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{input}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
+])
+
+agent = create_openai_functions_agent(llm, [], prompt)
+agent_executor = AgentExecutor(
+    agent=agent,
     tools=[],
-    memory=memory
+    memory=memory,
+    verbose=True
 )
 ```
 
@@ -206,10 +227,17 @@ agent = create_structured_chat_agent(
 ## 🔧 实战：构建客服 Agent
 
 ```python
-from langchain.agents import create_agent
-from langchain.tools import tool
-from langchain.vectorstores import Chroma
-from langchain.memory import ConversationBufferMemory
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_community.memory import ConversationBufferMemory
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.tools import tool
+
+# 初始化
+llm = ChatOpenAI(model="gpt-4", temperature=0)
+embeddings = OpenAIEmbeddings()
+memory = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
 
 # 知识库
 @tool
@@ -226,24 +254,29 @@ def check_order(order_id: str) -> str:
     # 调用订单 API
     return f"订单 {order_id} 已发货"
 
-# 创建 Agent
-memory = ConversationBufferMemory(return_messages=True)
-
-agent = create_agent(
-    llm=llm,
-    tools=[search_knowledge_base, check_order],
-    memory=memory,
-    system_message="""你是一个客服助手。
+# 创建提示词模板
+prompt = ChatPromptTemplate.from_messages([
+    ("system", """你是一个客服助手。
 - 先查询知识库回答产品问题
 - 订单问题使用订单查询工具
-- 保持友好专业的语气
-"""
+- 保持友好专业的语气"""),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{input}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
+])
+
+# 创建 Agent
+tools = [search_knowledge_base, check_order]
+agent = create_openai_functions_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    memory=memory,
+    verbose=True
 )
 
 # 使用
-response = agent.invoke({
-    "messages": [{"role": "user", "content": "我的订单 12345 到哪了？"}]
-})
+response = agent_executor.invoke({"input": "我的订单 12345 到哪了？"})
 ```
 
 ## 📈 性能优化

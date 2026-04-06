@@ -293,22 +293,33 @@ Agent 与物理世界交互：
 
 ```python
 # 5 分钟快速上手
-from langchain.agents import create_agent
+from langchain_openai import ChatOpenAI
+from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.tools import tool
 
+@tool
 def add(a: int, b: int) -> int:
     """两个数相加"""
     return a + b
 
-agent = create_agent(
-    model="gpt-4",
-    tools=[add],
-    system_prompt="你是一个数学助手"
-)
+# 创建 LLM
+llm = ChatOpenAI(model="gpt-4", temperature=0)
 
-result = agent.invoke({
-    "messages": [{"role": "user", "content": "123 + 456 = ?"}]
-})
-print(result)
+# 创建提示词模板
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "你是一个数学助手"),
+    ("human", "{input}"),
+])
+
+# 创建 Agent
+tools = [add]
+agent = create_openai_functions_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+# 使用 Agent
+result = agent_executor.invoke({"input": "123 + 456 = ?"})
+print(result["output"])
 ```
 
 ## 📚 案例研究
