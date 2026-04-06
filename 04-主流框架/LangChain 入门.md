@@ -76,7 +76,7 @@ result = chain.invoke({
 
 ```python
 from langchain_openai import ChatOpenAI
-from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import tool
 
@@ -101,7 +101,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # 创建 Agent
 tools = [search, calculate]
-agent = create_openai_functions_agent(llm, tools, prompt)
+agent = create_tool_calling_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 # 使用 Agent
@@ -115,7 +115,7 @@ response = agent_executor.invoke({
 ```python
 from langchain_community.memory import ConversationBufferMemory
 from langchain_openai import ChatOpenAI
-from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 # 创建记忆
@@ -133,7 +133,7 @@ prompt = ChatPromptTemplate.from_messages([
     MessagesPlaceholder(variable_name="agent_scratchpad"),
 ])
 
-agent = create_openai_functions_agent(llm, [], prompt)
+agent = create_tool_calling_agent(llm, [], prompt)
 agent_executor = AgentExecutor(
     agent=agent,
     tools=[],
@@ -191,9 +191,9 @@ result = weather.invoke({"city": "北京"})
 ### Zero-shot Agent
 
 ```python
-from langchain.agents import create_openai_functions_agent
+from langchain.agents import create_tool_calling_agent
 
-agent = create_openai_functions_agent(
+agent = create_tool_calling_agent(
     llm=llm,
     tools=tools,
     prompt=prompt
@@ -230,7 +230,7 @@ agent = create_structured_chat_agent(
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_community.memory import ConversationBufferMemory
-from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
 
@@ -267,7 +267,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # 创建 Agent
 tools = [search_knowledge_base, check_order]
-agent = create_openai_functions_agent(llm, tools, prompt)
+agent = create_tool_calling_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,

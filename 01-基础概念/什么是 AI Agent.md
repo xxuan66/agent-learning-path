@@ -33,7 +33,7 @@ LLM 是 Agent 的核心控制器，负责：
 ```python
 # 简单的 Agent 示例
 from langchain_openai import ChatOpenAI
-from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import tool
 
@@ -53,7 +53,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # 创建 Agent
 tools = [get_weather]
-agent = create_openai_functions_agent(llm, tools, prompt)
+agent = create_tool_calling_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 # 使用 Agent
