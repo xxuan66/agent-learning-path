@@ -64,6 +64,7 @@
 - [Multi-Agent 协作](03-核心组件/Multi-Agent%20协作.md) 🆕 - 多 Agent 协同
 - [评估与测试](03-核心组件/评估与测试.md) 🆕 - 如何衡量 Agent
 - [调试与可观测性](03-核心组件/调试与可观测性.md) 🆕 - 如何调试 Agent
+- [主流框架对比](04-主流框架/框架对比.md) - LangChain、AutoGen、CrewAI
 
 ### 🔴 实战篇
 
@@ -78,9 +79,11 @@
 
 > 设计模式、产品拆解、踩坑经验
 
-- [Agent 设计模式](08-设计模式/README.md) 🆕 - ReAct、规划、反思、投票
+- [Agent 设计模式](08-设计模式/README.md) 🆕 - ReAct、规划、反思
 - [产品架构拆解](09-产品拆解/README.md) 🆕 - Cursor、Perplexity、GPTs、Devin
 - [失败案例与踩坑记录](07-最佳实践/失败案例与踩坑记录.md) 🆕 - 真实教训
+- [Agent 月报](10-月报速评/Agent月报.md) 🆕 - 月度动态更新
+- [学习资源](06-学习资源/README.md) - 课程、博客、开源项目
 
 ---
 
