@@ -9,7 +9,7 @@
 ![Stars](https://img.shields.io/github/stars/xxuan66/agent-learning-path?style=social)
 ![Status](https://img.shields.io/badge/Status-持续更新-green)
 ![Language](https://img.shields.io/badge/Language-中文-green)
-![Articles](https://img.shields.io/badge/文章-35篇-blue)
+![Articles](https://img.shields.io/badge/文章-30篇-blue)
 
 [快速开始](#-内容导航) • [学习路线](#-学习路线图) • [设计模式](#-为什么这些内容值得读)
 
