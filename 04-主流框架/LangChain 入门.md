@@ -90,8 +90,41 @@ def search(query: str) -> str:
 
 @tool
 def calculate(expression: str) -> str:
-    """计算数学表达式"""
-    return str(eval(expression))
+    """安全地计算数学表达式"""
+    import ast
+    import operator
+    
+    # 支持的运算符
+    operators = {
+        ast.Add: operator.add,
+        ast.Sub: operator.sub,
+        ast.Mult: operator.mul,
+        ast.Div: operator.truediv,
+        ast.Pow: operator.pow,
+        ast.Mod: operator.mod,
+    }
+    
+    def _eval(node):
+        if isinstance(node, ast.Expression):
+            return _eval(node.body)
+        elif isinstance(node, ast.Constant):
+            return node.value
+        elif isinstance(node, ast.BinOp):
+            left = _eval(node.left)
+            right = _eval(node.right)
+            return operators[type(node.op)](left, right)
+        elif isinstance(node, ast.UnaryOp):
+            operand = _eval(node.operand)
+            if isinstance(node.op, ast.USub):
+                return -operand
+        raise ValueError("不支持的表达式")
+    
+    try:
+        tree = ast.parse(expression, mode='eval')
+        result = _eval(tree)
+        return str(result)
+    except Exception as e:
+        return f"计算错误: {str(e)}"
 
 # 创建提示词模板
 prompt = ChatPromptTemplate.from_messages([
