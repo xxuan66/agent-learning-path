@@ -22,6 +22,8 @@ pip install langchain-openai langchain-chroma langchain-community
 
 ### 1. Model（模型）
 
+Model 是 LangChain 的基础组件，封装了和各种大模型的交互。下面的代码创建了一个 GPT-4 模型实例，`temperature=0` 表示输出确定性最高（同样的输入得到同样的输出），`max_tokens=1000` 限制最长输出为 1000 个 token。
+
 ```python
 from langchain_openai import ChatOpenAI
 
@@ -38,6 +40,8 @@ print(response.content)
 ```
 
 ### 2. Prompt（提示）
+
+Prompt 模板把"提示词"参数化，让你可以重复使用同一个模板、只替换变量。下面的代码定义了一个角色+专长+输入的三变量模板，然后用具体值填充它。
 
 ```python
 from langchain.prompts import ChatPromptTemplate
@@ -58,6 +62,8 @@ formatted = prompt.format_messages(
 
 ### 3. Chain（链）
 
+Chain 是 LangChain 的核心概念——把多个组件用管道符号（`|`）串起来，像流水线一样依次执行。下面的代码把提示模板和模型连接起来：先用模板格式化输入，再把结果发给模型。
+
 ```python
 from langchain.chains import LLMChain
 
@@ -73,6 +79,8 @@ result = chain.invoke({
 ```
 
 ### 4. Agent（智能体）
+
+下面的代码创建了一个带两个工具（搜索和计算）的 Agent。关键点是 `@tool` 装饰器——它把普通函数包装成 Agent 可以调用的工具，函数的文档字符串会成为工具的描述，Agent 靠这个描述来决定何时调用哪个工具。
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -144,6 +152,8 @@ response = agent_executor.invoke({
 ```
 
 ### 5. Memory（记忆）
+
+下面的代码创建了一个带记忆的 Agent。关键设计是 `MessagesPlaceholder(variable_name="chat_history")`——它在提示词模板中留了一个位置，每次调用 Agent 时，LangChain 会自动把历史对话填充到这个位置，让模型看到之前的交互内容。
 
 ```python
 from langchain_community.memory import ConversationBufferMemory

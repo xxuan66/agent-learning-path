@@ -33,6 +33,15 @@
 
 ## 工具定义
 
+研究助手 Agent 需要六个工具来覆盖从信息搜集到报告生成的完整研究流程：
+
+1. `search_web`：搜索网页，返回标题、摘要和链接
+2. `read_article`：抓取网页正文内容（自动截断过长内容）
+3. `search_papers`：通过 Semantic Scholar API 搜索学术论文
+4. `summarize_content`：调用 LLM 总结内容，提取关键信息
+5. `compare_sources`：对比两个信息源的异同，发现矛盾之处
+6. `generate_report`：基于所有发现生成结构化研究报告
+
 ```python
 from langchain.tools import tool
 import requests

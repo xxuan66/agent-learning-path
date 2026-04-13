@@ -33,6 +33,13 @@
 
 ## 工具定义
 
+数据分析 Agent 需要四个工具来覆盖完整的分析流程：
+
+1. `load_data`：加载 CSV 或 Excel 文件，返回数据的基本信息（行数、列名、数据类型、缺失值）
+2. `analyze_data`：执行具体的分析操作（统计描述、分组聚合等）
+3. `create_chart`：根据指定的图表类型生成可视化图表并保存为图片
+4. `generate_report`：调用 LLM 把分析发现写成结构化报告
+
 ```python
 from langchain.tools import tool
 import pandas as pd

@@ -69,6 +69,8 @@ Final Answer: 最终答案
 
 ## 代码示例
 
+下面的代码实现了一个完整的 ReAct Agent。核心循环是：每次调用 LLM 生成一个"思考"，如果思考中包含工具调用就执行工具并把结果追加到 prompt 中，如果包含最终答案就返回。
+
 ```python
 class ReActAgent:
     def __init__(self, llm, tools, max_steps=10):

@@ -33,6 +33,14 @@
 
 ## 工具定义
 
+代码生成 Agent 需要五个工具来实现"生成-执行-审查-修复-优化"的完整循环：
+
+1. `generate_code`：根据自然语言需求生成代码
+2. `execute_code`：在沙箱中执行代码并返回结果（支持 Python 和 JavaScript）
+3. `review_code`：审查代码质量，发现 bug、性能问题和安全隐患
+4. `fix_code`：根据错误信息修复代码
+5. `optimize_code`：在功能正确的前提下优化代码可读性和性能
+
 ```python
 from langchain.tools import tool
 import subprocess

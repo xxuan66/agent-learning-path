@@ -18,6 +18,8 @@ pip install crewai
 
 ### Agent（智能体）
 
+CrewAI 中的 Agent 用"角色扮演"的方式定义——你需要指定角色（role）、目标（goal）和背景故事（backstory）。这些信息会被注入提示词，让大模型更好地理解自己应该扮演什么角色。
+
 ```python
 from crewai import Agent
 
@@ -33,6 +35,8 @@ researcher = Agent(
 
 ### Task（任务）
 
+Task 定义了 Agent 需要完成的具体工作。关键是 `expected_output`——它告诉 Agent 最终产出应该是什么格式，这比只说"完成任务"效果好很多。
+
 ```python
 from crewai import Task
 
@@ -45,6 +49,8 @@ research_task = Task(
 ```
 
 ### Crew（团队）
+
+Crew 把多个 Agent 和多个 Task 组装在一起。`Process.sequential` 表示按顺序执行任务（前一个完成后再执行下一个），`kickoff()` 启动整个团队的工作流程。
 
 ```python
 from crewai import Crew

@@ -18,6 +18,8 @@ pip install pyautogen
 
 ### ConversableAgent（可对话 Agent）
 
+ConversableAgent 是 AutoGen 的基础组件——它是一个可以和其他 Agent 或人类对话的智能体。下面的代码创建了一个 Agent，设置了系统提示词（定义角色）和 LLM 配置（用哪个模型）。
+
 ```python
 from autogen import ConversableAgent
 
@@ -36,6 +38,8 @@ response = agent.generate_reply(
 
 ### UserProxyAgent（用户代理）
 
+UserProxyAgent 代表人类用户，它有特殊能力：可以执行代码。`code_execution_config={"work_dir": "coding"}` 指定了代码执行的工作目录。`human_input_mode` 控制何时需要人类介入：`TERMINATE` 表示只有在任务结束时才询问人类。
+
 ```python
 from autogen import UserProxyAgent
 
@@ -51,6 +55,8 @@ user_proxy = UserProxyAgent(
 ## 🤝 多 Agent 协作
 
 ### 双 Agent 对话
+
+下面的代码展示了 AutoGen 最基础的用法：创建两个 Agent（程序员和审查员），然后让它们对话。程序员说"请帮我审查这段代码"，审查员会给出反馈，程序员可能根据反馈修改——直到双方达成一致。
 
 ```python
 from autogen import ConversableAgent
@@ -76,6 +82,8 @@ coder.initiate_chat(
 ```
 
 ### 群聊模式
+
+群聊模式让多个 Agent 同时参与讨论。`GroupChat` 管理对话流程（谁在什么时候发言），`GroupChatManager` 负责协调——它会根据对话内容决定下一个该谁发言。
 
 ```python
 from autogen import GroupChat, GroupChatManager

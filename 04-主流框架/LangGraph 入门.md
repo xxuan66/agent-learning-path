@@ -30,6 +30,8 @@ pip install langgraph
 
 ### StateGraph（状态图）
 
+StateGraph 是 LangGraph 的核心概念——用图结构来定义 Agent 的工作流。下面的代码做了两件事：定义一个状态类型（`AgentState`，包含消息列表和当前步骤），然后用这个状态类型创建一个空的图。
+
 ```python
 from langgraph.graph import StateGraph, END
 from typing import TypedDict, Annotated
@@ -45,6 +47,8 @@ workflow = StateGraph(AgentState)
 ```
 
 ### Node（节点）
+
+节点是图中的"处理单元"——每个节点是一个函数，接收当前状态作为输入，返回更新后的状态。下面定义了两个节点：`agent_node` 负责调用 LLM 生成回复，`tool_node` 负责执行工具调用。
 
 ```python
 def agent_node(state: AgentState) -> AgentState:
@@ -66,6 +70,13 @@ workflow.add_node("tool", tool_node)
 ```
 
 ### Edge（边）
+
+边定义了节点之间的流转逻辑。LangGraph 支持两种边：
+
+- **普通边**（`add_edge`）：固定从 A 流转到 B
+- **条件边**（`add_conditional_edges`）：根据当前状态动态决定下一步去哪个节点
+
+下面的 `should_continue` 函数就是条件判断——如果 LLM 的回复包含工具调用，就去执行工具；否则结束流程。
 
 ```python
 # 条件边
